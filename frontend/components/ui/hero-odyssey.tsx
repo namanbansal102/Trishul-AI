@@ -9,7 +9,7 @@ interface ElasticHueSliderProps {
   onChange: (value: number) => void;
   min?: number;
   max?: number;
-  step?: number;components
+  step?: number;
   label?: string;
 }
 
@@ -353,8 +353,7 @@ export const HeroSection: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
+        duration: 0.5
       }
     }
   };
@@ -409,7 +408,7 @@ export const HeroSection: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="md:hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-lg z-9999">
+            className="md:hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-lg">
             <div className="flex flex-col items-center justify-center h-full space-y-6 text-lg">
               <button
                 className="absolute top-6 right-6 p-2"
@@ -518,7 +517,7 @@ export const HeroSection: React.FC = () => {
         <div className="absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-b from-blue-500/20 to-purple-600/10 blur-3xl"></div>
 
         {/* Central light beam - now using the state variable for hue */}
-        <div className="absolute top-0 w-[100%] left-1/2 transform -translate-x-1/2 h-full">
+        <div className="absolute top-0 w-full left-1/2 transform -translate-x-1/2 h-full">
           <Lightning
             hue={lightningHue} // Use the state variable here
             xOffset={0}
