@@ -1,0 +1,203 @@
+"use client"
+
+import React from "react"
+import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { Label } from "@/components/ui/label"
+
+interface SessionModalProps {
+  isOpen: boolean
+  onClose: () => void
+  onSessionCreated: (sessionId: string, userId: string) => void
+  currentSessionId?: string | null
+  currentUserId?: string
+  currentAppName?: string
+}
+
+export function SessionModal({ 
+  isOpen, 
+  onClose, 
+  onSessionCreated, 
+  currentSessionId, 
+  currentUserId, 
+  currentAppName 
+}: SessionModalProps) {
+  const [userId, setUserId] = useState(currentUserId || "")
+  const [appName, setAppName] = useState(currentAppName || "blockchain-assistant")
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
+
+  // Reset form when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      setUserId(currentUserId || "")
+      setAppName(currentAppName || "blockchain-assistant")
+      setError("")
+    }
+  }, [isOpen, currentUserId, currentAppName])
+
+  const createSession = async () => {
+    if (!userId.trim() || !appName.trim()) {
+      setError("Please fill in all fields")
+      return
+    }
+
+    setIsLoading(true)
+    setError("")
+
+    try {
+      // Use AbortController to timeout the request if server is not responding
+      const controller = new AbortController()
+      const timeoutMs = 8000
+      const timeoutId = setTimeout(() => controller.abort(), timeoutMs)
+
+      const response = await fetch("/api/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          appName,
+          userId,
+          state: {},
+          events: [],
+        }),
+        signal: controller.signal,
+      })
+
+      clearTimeout(timeoutId)
+
+      if (!response.ok) {
+        // Try to read error from response, but fall back to throwing
+        let serverErr = `HTTP error! status: ${response.status}`
+        try {
+          const errorData = await response.json()
+          serverErr = errorData?.error || serverErr
+        } catch (_) {}
+        throw new Error(serverErr)
+      }
+
+      const sessionData = await response.json()
+
+      // Store in localStorage
+      localStorage.setItem("sessionId", sessionData.id)
+      localStorage.setItem("userId", userId)
+      localStorage.setItem("appName", appName)
+
+      onSessionCreated(sessionData.id, userId)
+      onClose()
+    } catch (error) {
+      console.error("Failed to create session via API, falling back to local session:", error)
+
+      // Fallback: create a local session so the UI continues to work when backend is down
+      try {
+        const fallbackId = `local_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`
+        // Store fallback session info
+        localStorage.setItem("sessionId", fallbackId)
+        localStorage.setItem("userId", userId)
+        localStorage.setItem("appName", appName)
+
+        // Inform parent that a session was "created"
+        onSessionCreated(fallbackId, userId)
+        onClose()
+
+        // Set a non-blocking user-facing error message to indicate offline fallback
+        setError("Could not reach the server — a local session was created.")
+      } catch (fallbackError) {
+        console.error("Failed to create local fallback session:", fallbackError)
+        setError(
+          error instanceof Error
+            ? error.message
+            : "Failed to create session. Please try again."
+        )
+      }
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && !isLoading) {
+      createSession()
+    }
+  }
+
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="bg-gray-900 border-gray-700 text-white">
+        <DialogHeader>
+          <DialogTitle>
+            {currentSessionId ? "Create New Chat Session" : "Create New Session"}
+          </DialogTitle>
+          <DialogDescription className="text-gray-400">
+            {currentSessionId 
+              ? "Start a new chat session. This will create a fresh conversation." 
+              : "Enter your details to start a new AI chat session"
+            }
+          </DialogDescription>
+        </DialogHeader>
+
+        {currentSessionId && (
+          <div className="bg-gray-800 rounded-lg p-3 border border-gray-700">
+            <div className="text-sm text-gray-400 mb-1">Current Session</div>
+            <div className="text-sm">
+              <div>Session ID: <span className="text-gray-300">{currentSessionId}</span></div>
+              <div>User ID: <span className="text-gray-300">{currentUserId}</span></div>
+              <div>App: <span className="text-gray-300">{currentAppName}</span></div>
+            </div>
+          </div>
+        )}
+
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="appName">App Name</Label>
+            <Input
+              id="appName"
+              value={appName}
+              onChange={(e) => setAppName(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="blockchain-assistant"
+              className="bg-gray-800 border-gray-600 text-white"
+              disabled={isLoading}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="userId">User ID</Label>
+            <Input
+              id="userId"
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Enter your user ID"
+              className="bg-gray-800 border-gray-600 text-white"
+              disabled={isLoading}
+            />
+          </div>
+
+          {error && <div className="text-red-400 text-sm">{error}</div>}
+
+          <div className="flex justify-end space-x-2">
+            <Button
+              variant="outline"
+              onClick={onClose}
+              disabled={isLoading}
+              className="border-gray-600 text-white hover:bg-gray-800 bg-transparent"
+            >
+              Cancel
+            </Button>
+            <Button
+              onClick={createSession}
+              disabled={isLoading || !userId.trim() || !appName.trim()}
+              className="bg-white text-black hover:bg-gray-200"
+            >
+              {isLoading ? "Creating..." : currentSessionId ? "Create New Session" : "Create Session"}
+            </Button>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}
