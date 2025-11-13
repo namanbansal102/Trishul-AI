@@ -12,17 +12,17 @@ An intelligent blockchain agent that automates crypto transactions, manages paym
 
 #### **Scheduled Payments**
 - Send crypto payments at any future date/time using natural language
-- **Example**: "Send 100 STT to Alice next Monday at 10am"
+- **Example**: "Send 100 SOMI to Alice next Monday at 10am"
 - **Bulk Scheduling**: Pay 100 employees automatically every month
   ```
-  "Schedule 5 STT to employee1.eth on 1st of every month"
-  "Send birthday bonus of 1 STT to john.eth on December 15"
+  "Schedule 5 SOMI to employee1.eth on 1st of every month"
+  "Send birthday bonus of 1 SOMI to john.eth on December 15"
   ```
 
 #### **Payment Links**
 - Generate shareable payment links for easy crypto collection
 - Track all payment link transactions
-- **Example**: "Create a payment link for 50 STT to my address"
+- **Example**: "Create a payment link for 50 SOMI to my address"
 
 #### **Recurring Payments**
 - Set up automatic monthly salaries
@@ -35,8 +35,8 @@ An intelligent blockchain agent that automates crypto transactions, manages paym
 
 #### **Token Transfers**
 ```
-"Send 10 STT to 0xABC...123"
-"Transfer 5 STT to alice.eth"
+"Send 10 SOMI to 0xABC...123"
+"Transfer 5 SOMI to alice.eth"
 "Send 100 tokens to my friend Bob"
 ```
 
@@ -44,7 +44,7 @@ An intelligent blockchain agent that automates crypto transactions, manages paym
 ```
 "What's my wallet balance?"
 "Check balance of token XYZ"
-"Show my STT holdings"
+"Show my SOMI holdings"
 ```
 
 #### **Transaction Tracking**
@@ -149,8 +149,8 @@ Never lose track of your contacts:
 - Generate payment links for customers
 
 ### **For HR Departments**
-- Automate monthly salary disbursements in STT
-- Send birthday bonuses (e.g., "1 STT on employee birthday")
+- Automate monthly salary disbursements in SOMI
+- Send birthday bonuses (e.g., "1 SOMI on employee birthday")
 - Anniversary rewards and milestone payments
 - Track all employee payment history
 
@@ -183,17 +183,17 @@ Never lose track of your contacts:
 
 ### Scheduling
 ```
-"Send 50 STT to 0xABC...123 after 5 minutes"
-"Schedule 10 STT to alice.eth on December 25 at 9am"
-"Pay my 100 employees 5 STT each on 1st of next month"
-"Send 1 STT birthday bonus to john.eth on March 10"
+"Send 50 SOMI to 0xABC...123 after 5 minutes"
+"Schedule 10 SOMI to alice.eth on December 25 at 9am"
+"Pay my 100 employees 5 SOMI each on 1st of next month"
+"Send 1 SOMI birthday bonus to john.eth on March 10"
 ```
 
 ### Token Operations
 ```
 "Create a memecoin called MoonDoge with symbol MDOGE"
 "Deploy an ERC20 token named StarToken"
-"What's my STT balance?"
+"What's my SOMI balance?"
 ```
 
 ### Blockchain Queries
@@ -213,7 +213,7 @@ Never lose track of your contacts:
 
 ### Payment Links
 ```
-"Generate payment link for 100 STT"
+"Generate payment link for 100 SOMI"
 "Show all my payment link transactions"
 ```
 
@@ -225,7 +225,7 @@ Never lose track of your contacts:
 - **Chain ID**: 50311
 - **RPC URL**: https://dream-rpc.somnia.network/
 - **Block Explorer**: https://somnia-testnet.socialscan.io/
-- **Native Token**: STT (Somnia Test Token)
+- **Native Token**: SOMI (Somnia Token)
 
 **Mainnet Features Coming Soon**:
 - Cross-chain swaps
@@ -247,7 +247,7 @@ Never lose track of your contacts:
 ## 🤝 Use Cases in Action
 
 ### Example 1: Monthly Employee Payroll
-> *"Schedule 5 STT salary to 100 employees every 1st of the month"*
+> *"Schedule 5 SOMI salary to 100 employees every 1st of the month"*
 
 Trishul AI automatically:
 - Resolves employee addresses from your address book
@@ -256,7 +256,7 @@ Trishul AI automatically:
 - Sends confirmation for each payment
 
 ### Example 2: Birthday Bonuses
-> *"Send 1 STT to John on his birthday December 15 at 9am"*
+> *"Send 1 SOMI to John on his birthday December 15 at 9am"*
 
 Trishul AI:
 - Schedules the payment for the exact date/time
@@ -278,7 +278,7 @@ Trishul AI:
 
 Just talk to Trishul AI naturally:
 
-> *"Hey, pay my 100 employees 5 STT each on the 1st of every month, and send 1 STT bonus to anyone on their birthday"*
+> *"Hey, pay my 100 employees 5 SOMI each on the 1st of every month, and send 1 SOMI bonus to anyone on their birthday"*
 
 Trishul AI handles the rest! 🚀
 
