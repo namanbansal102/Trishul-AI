@@ -12,7 +12,7 @@ from CoinGecko import CoinGeckoToken
 schedule_engine = BackgroundScheduler()
 schedule_engine.start()
 
-token_reference = CoinGeckoToken("sonic")
+token_reference = CoinGeckoToken("Botchain")
 
 cached_tokens = {}
 with open("tokensList.json") as f:
@@ -21,9 +21,9 @@ with open("tokensList.json") as f:
 runtime = datetime.now()
 network = {
         "chain_id": 14601,
-    "rpc": "https://rpc.testnet.soniclabs.com",
-    "name": "Sonic Testnet",
-    "explorer": "https://explorer.testnet.soniclabs.com/",
+    "rpc": "https://rpc.Mainnet.Botchainlabs.com",
+    "name": "Botchain Mainnet",
+    "explorer": "https://explorer.Mainnet.Botchainlabs.com/",
     "api": "YourOKLinkAPIKey"
 }
 

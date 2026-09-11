@@ -1,23 +1,41 @@
 import { http, createConfig } from 'wagmi'
-import { mainnet, sepolia, polygon, optimism, arbitrum } from 'wagmi/chains'
 import { injected, walletConnect, coinbaseWallet } from 'wagmi/connectors'
+import { defineChain } from 'viem'
+
+export const botchain = defineChain({
+  id: 677,
+  name: 'BOT Chain Mainnet',
+  nativeCurrency: {
+    name: 'BOT',
+    symbol: 'BOT',
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: ['https://rpc.botchain.ai'],
+      webSocket: ['wss://ws-rpc.botchain.ai'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Botscan',
+      url: 'https://scan.botchain.ai',
+    },
+  },
+})
 
 // Get WalletConnect project ID from environment variable
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'YOUR_PROJECT_ID'
 
 export const config = createConfig({
-  chains: [mainnet, sepolia, polygon, optimism, arbitrum],
+  chains: [botchain],
   connectors: [
     injected(),
     walletConnect({ projectId }),
     coinbaseWallet({ appName: 'Trishul AI Chat' }),
   ],
   transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
-    [polygon.id]: http(),
-    [optimism.id]: http(),
-    [arbitrum.id]: http(),
+    [botchain.id]: http('https://rpc.botchain.ai'),
   },
 })
 

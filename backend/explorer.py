@@ -1,4 +1,4 @@
-# Sonic Explorer Module
+# Botchain Explorer Module
 from typing import List, Dict
 from datetime import datetime, timedelta
 import random

@@ -182,7 +182,7 @@ export function SessionModal({ isOpen, onClose, onSessionCreated }: SessionModal
                   value={sessionId}
                   onChange={(e) => setSessionId(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Enter session ID (optional)"
+                  placeholder="Enter session Name "
                   className="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all"
                 />
               </div>

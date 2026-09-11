@@ -432,7 +432,7 @@ export const HeroSection: React.FC = () => {
           className="w-full z-200 top-[30%] relative"
         >
           <motion.div variants={itemVariants}>
-            <FeatureItem name="Somnia" value="Testnet" position="left-0 sm:left-10 top-40" />
+            <FeatureItem name="BotChain" value="Mainnet" position="left-0 sm:left-10 top-40" />
           </motion.div>
           <motion.div variants={itemVariants}>
           

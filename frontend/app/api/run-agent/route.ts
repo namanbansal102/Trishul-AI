@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
         // Add any required headers like API keys
       },
       body: JSON.stringify({
-        "appName":"somnia_agent", // hardcoded 
+        "appName":"BotChain_agent", // hardcoded 
         userId,
         sessionId,
         newMessage,

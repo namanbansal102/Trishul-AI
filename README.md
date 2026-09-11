@@ -1,8 +1,8 @@
-# ⚡ Trishul AI - Intelligent Blockchain Agent on Somnia Testnet
+# ⚡ Trishul AI - Intelligent Blockchain Agent on Botchain Mainnet
 
-![Somnia Network](https://img.shields.io/badge/Built%20on-Somnia%20Testnet-blue) ![AI Agent](https://img.shields.io/badge/AI-Gemini%202.5-green) ![Blockchain](https://img.shields.io/badge/Network-Somnia-purple)
+![Botchain Network](https://img.shields.io/badge/Built%20on-Botchain%20Mainnet-blue) ![AI Agent](https://img.shields.io/badge/AI-Gemini%202.5-green) ![Blockchain](https://img.shields.io/badge/Network-Botchain-purple)
 
-An intelligent blockchain agent that automates crypto transactions, manages payments, deploys smart contracts, and provides comprehensive blockchain insights - all through natural language conversations on Somnia Network.
+An intelligent blockchain agent that automates crypto transactions, manages payments, deploys smart contracts, and provides comprehensive blockchain insights - all through natural language conversations on Botchain Network.
 
 ---
 
@@ -58,7 +58,7 @@ An intelligent blockchain agent that automates crypto transactions, manages paym
 
 ### 🪙 Token & Smart Contract Deployment
 
-#### **Create Memecoins on Somnia Network**
+#### **Create Memecoins on Botchain Network**
 Deploy your own tokens in seconds:
 ```
 "Create a memecoin called DogeMoon with symbol DMOON"
@@ -77,7 +77,7 @@ Deploy your own tokens in seconds:
 
 ### 📊 Blockchain Explorer Features
 
-Get real-time blockchain data from Somnia Testnet:
+Get real-time blockchain data from Botchain Mainnet:
 
 - **Latest Blocks**: `"Show me the latest 10 blocks"`
 - **Block Information**: `"Get details of block #12345"`
@@ -114,7 +114,7 @@ Store and manage your digital assets on-chain:
 
 #### **Live Market Information**
 ```
-"What's the current price of Somnia token?"
+"What's the current price of Botchain token?"
 "Show me token market data"
 "Get token tickers"
 ```
@@ -154,7 +154,7 @@ Never lose track of your contacts:
 - Anniversary rewards and milestone payments
 - Track all employee payment history
 
-### **For Crypto Projects on Somnia**
+### **For Crypto Projects on Botchain**
 - Deploy memecoins in seconds
 - Airdrop tokens to community members
 - Create custom smart contracts
@@ -171,7 +171,7 @@ Never lose track of your contacts:
 ## 🛠️ Technical Stack
 
 - **AI Model**: Google Gemini 2.5 Flash
-- **Blockchain**: Somnia Network (Testnet)
+- **Blockchain**: Botchain Network (Mainnet)
 - **Smart Contracts**: EVM-Compatible
 - **Scheduling**: APScheduler
 - **Database**: MongoDB
@@ -198,7 +198,7 @@ Never lose track of your contacts:
 
 ### Blockchain Queries
 ```
-"Show me the latest blocks on Somnia"
+"Show me the latest blocks on Botchain"
 "Get transactions for address 0xDEF...456"
 "What are the top token holders of token 0xGHI...789?"
 "Show market chart for last 30 days"
@@ -221,11 +221,11 @@ Never lose track of your contacts:
 
 ## 🌐 Network Information
 
-**Current Network**: Somnia Testnet
+**Current Network**: Botchain Mainnet
 - **Chain ID**: 50311
-- **RPC URL**: https://dream-rpc.somnia.network/
-- **Block Explorer**: https://somnia-testnet.socialscan.io/
-- **Native Token**: SOMI (Somnia Token)
+- **RPC URL**: https://dream-rpc.Botchain.network/
+- **Block Explorer**: https://Botchain-Mainnet.socialscan.io/
+- **Native Token**: SOMI (Botchain Token)
 
 **Mainnet Features Coming Soon**:
 - Cross-chain swaps
@@ -264,11 +264,11 @@ Trishul AI:
 - Executes automatically when the time comes
 
 ### Example 3: Deploy a Memecoin
-> *"Create a memecoin called SomniaMoon with symbol SMOON"*
+> *"Create a memecoin called BotchainMoon with symbol SMOON"*
 
 Trishul AI:
 - Generates the token contract
-- Deploys it on Somnia Network
+- Deploys it on Botchain Network
 - Returns the token address
 - Adds a fun comment about your memecoin!
 
@@ -286,7 +286,7 @@ Trishul AI handles the rest! 🚀
 
 ## 📞 Support & Marketplace
 
-- **Blockchain**: Built on Somnia Network
+- **Blockchain**: Built on Botchain Network
 - **AI Agent Marketplace**: Coming Soon
 - **Mainnet Swap Features**: In Development
 
@@ -299,6 +299,6 @@ Trishul AI is named after the powerful trident (Trishul in Sanskrit), symbolizin
 - **Efficiency**: Automated task execution
 - **Security**: Safe and reliable transactions
 
-**Made with ❤️ for the Somnia Network Community**
+**Made with ❤️ for the Botchain Network Community**
 
 *Bringing AI-powered automation to blockchain, one conversation at a time.*
