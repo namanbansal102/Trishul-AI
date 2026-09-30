@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowLeft, Sparkles, Target, Users, Zap } from "lucide-react"
 
 export default function AboutPage() {
@@ -64,6 +65,7 @@ export default function AboutPage() {
       >
         <div className="max-w-7xl mx-auto px-4 backdrop-blur-3xl bg-black/50 rounded-full py-4 flex justify-between items-center border border-white/10">
           <Link href="/" className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors">
+            <Image src="/logo.png" alt="Trishul" width={40} height={40} className="h-9 w-9 object-contain" />
             <ArrowLeft className="w-5 h-5" />
             <span className="font-medium">Back to Home</span>
           </Link>

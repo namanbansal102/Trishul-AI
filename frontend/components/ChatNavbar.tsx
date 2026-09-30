@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { WalletConnectButton } from "./WalletConnectButton"
 
 export function ChatNavbar() {
@@ -18,10 +19,8 @@ export function ChatNavbar() {
       >
         <div className="max-w-7xl mx-auto px-4 backdrop-blur-3xl bg-black/50 rounded-full py-4 flex justify-between items-center border border-white/10">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <path d="M20 5L5 20L20 35L35 20L20 5Z" stroke="white" strokeWidth="2" />
-              </svg>
+            <Link href="/" className="flex items-center" aria-label="Trishul home">
+              <Image src="/logo.png" alt="Trishul" width={48} height={48} className="h-10 w-10 object-contain" />
             </Link>
             <div className="hidden md:flex items-center space-x-6 ml-8">
               <Link

@@ -2,6 +2,7 @@
 import React, { useState,useRef,useEffect } from 'react';
 import { motion,AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 interface ElasticHueSliderProps {
@@ -370,11 +371,9 @@ export const HeroSection: React.FC = () => {
           className="px-4 backdrop-blur-3xl bg-black/50 rounded-50 py-4 flex justify-between items-center mb-12"
         >
           <div className="flex items-center">
-            <div className="text-2xl font-bold">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <path d="M20 5L5 20L20 35L35 20L20 5Z" stroke="white" strokeWidth="2" />
-              </svg>
-            </div>
+            <Link href="/" aria-label="Trishul home" className="flex items-center">
+              <Image src="/logo.png" alt="Trishul" width={48} height={48} className="h-10 w-10 object-contain" />
+            </Link>
             <div className="hidden md:flex items-center space-x-6 ml-8">
               <Link href="/" className="px-4 py-2 bg-white text-black hover:bg-gray-100 rounded-full text-sm transition-colors font-medium">Home</Link>
               <Link href="/chat" className="px-4 py-2 text-white hover:text-gray-300 transition-colors">AI Chat</Link>

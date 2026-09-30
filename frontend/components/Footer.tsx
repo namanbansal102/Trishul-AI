@@ -2,10 +2,10 @@ import { Footer2 } from "@/components/ui/shadcnblocks-com-footer2"
 
 const demoData = {
   logo: {
-    src: "https://www.shadcnblocks.com/images/block/block-1.svg",
-    alt: "blocks for shadcn/ui",
-    title: "Shadcnblocks.com",
-    url: "https://www.shadcnblocks.com",
+    src: "/logo.png",
+    alt: "Trishul",
+    title: "Trishul AI",
+    url: "/",
   },
   tagline: "Components made easy.",
   menuItems: [
